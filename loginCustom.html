@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        .custom-signup-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #api .entry-item[data-id="SignUpWithLogonEmail"] {
+            display: none !important; /* Hide the default sign-up button */
+        }
+    </style>
+</head>
+<body>
+    <div id="api">
+        <!-- Default B2C content loads here -->
+
+        <!-- Add your custom button at the bottom -->
+        <button class="custom-signup-button" onclick="window.location.href='https://web-chp-energy-test.int.championenergyservices.com/register'">
+            Custom Sign Up
+        </button>
+    </div>
+
+    <!-- Required B2C script -->
+    <script src="https://b2clogin.com/static/js/jquery.min.js"></script>
+    <script>
+        // Wait for B2C elements to load before hiding
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('[data-id="SignUpWithLogonEmail"]').hide(); // Hide default sign-up
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
